@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine for Bharat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0b3d2e; /* deepest bottle green */
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif; /* clear font */
+      color: white;
+      text-align: center;
+    }
+
+    .stars, .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: yellow;
+      border-radius: 50%;
+      animation: fly 6s linear infinite, sparkle 2s infinite;
+    }
+
+    @keyframes sparkle {
+      0% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0; transform: scale(0.5); }
+    }
+
+    @keyframes fly {
+      from { transform: translateY(0); }
+      to { transform: translateY(-100vh); }
+    }
+
+    .heart {
+      position: absolute;
+      color: pink;
+      font-size: 22px;
+      animation: float 8s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(1); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+
+    .message {
+      margin-top: 15vh;
+      font-size: 1.2em;
+      padding: 0 20px;
+      line-height: 1.6em;
+      font-weight: normal;
+    }
+
+    .valentine {
+      margin-top: 40px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .valentine h1 {
+      font-size: 2em;
+      font-weight: normal;
+      color: #ffcccc;
+    }
+
+    .valentine p {
+      font-size: 1em;
+      color: #ffe6e6;
+      font-weight: normal;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #ff6699;
+      color: white;
+    }
+
+    #no {
+      background-color: #999;
+      color: white;
+      position: relative;
+    }
+
+    .result {
+      margin-top: 40px;
+      font-size: 1.5em;
+      font-weight: normal;
+      color: #ffccff;
+      display: none;
+      line-height: 1.5em;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .teddy-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .teddy {
+      font-size: 3em;
+      margin: 10px;
+      animation: kiss 2s infinite alternate;
+    }
+
+    @keyframes kiss {
+      from { transform: translateX(0); }
+      to { transform: translateX(10px) scale(1.2); }
+    }
+
+    /* iPhone view adjustments */
+    @media (max-width: 600px) {
+      .message { font-size: 1em; }
+      .valentine h1 { font-size: 1.6em; }
+      .result { font-size: 1.3em; }
+      button { font-size: 1em; padding: 10px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="hearts"></div>
+
+  <div class="message">
+    My dearest Bharat,<br><br>
+    In just these two short months, you’ve become my favorite boy! You're the smartest shorty I've ever come across. Nigga you did steal my heart bro? I mean, its magical as fuckkkk. Can you believe how close we've become in 2 tiny months?<br><br>
+    But honestly, man, I need you to know how special you are. Okay lets put it this way - I'd eat lauki for you everyday for the rest of my life.<br><br>
+    So today, and on every Valentine that follows, I choose you with my whole heart, with all the love I have, and with every tomorrow I dream of.
+  </div>
+
+  <div class="valentine">
+    <h1>Be My Valentine?</h1>
+    <p>This Valentine, and every Valentine for the rest of my life.</p>
+  </div>
+
+  <div class="buttons">
+    <button id="yes">Definitely Yes</button>
+    <button id="no">NO</button>
+  </div>
+
+  <div class="result" id="result">
+    I KNEW YOU LOVE ME 💖 <br>
+    <div class="teddy-container">
+      <span class="teddy">🧸💋</span>
+      <span class="teddy">🧸💋</span>
+      <span class="teddy">🧸💋</span>
+      <span class="teddy">🧸💋</span>
+      <span class="teddy">🧸💋</span>
+    </div>
+  </div>
+
+  <script>
+    // Generate stars
+    const starsContainer = document.querySelector('.stars');
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.animationDelay = Math.random() * 5 + 's';
+      starsContainer.appendChild(star);
+    }
+
+    // Generate hearts
+    const heartsContainer = document.querySelector('.hearts');
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heartsContainer.appendChild(heart);
+    }
+
+    // Moving NO button
+    const noBtn = document.getElementById('no');
+    noBtn.addEventListener('mouseover', () => {
+      noBtn.style.top = Math.random() * 80 + 'vh';
+      noBtn.style.left = Math.random() * 80 + 'vw';
+      noBtn.style.position = 'absolute';
+    });
+
+    // YES button click
+    const yesBtn = document.getElementById('yes');
+    const result = document.getElementById('result');
+    yesBtn.addEventListener('click', () => {
+      result.style.display = 'block';
+      result.style.animation = 'fadeIn 1s forwards';
+    });
+  </script>
+</body>
+</html>
