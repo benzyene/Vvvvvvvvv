@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Updated viewport for smoother mobile scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Valentine for Bharat</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
   <style>
@@ -10,7 +11,7 @@
       margin: 0;
       padding: 0;
       background-color: #0b3d2e; /* deepest bottle green */
-      overflow: hidden;
+      overflow-x: hidden;
       font-family: 'Poppins', sans-serif; /* clear font */
       color: white;
       text-align: center;
@@ -83,6 +84,10 @@
 
     .buttons {
       margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     button {
@@ -92,6 +97,7 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      max-width: 300px;
     }
 
     #yes {
@@ -128,7 +134,7 @@
     }
 
     .teddy {
-      font-size: 3em;
+      font-size: 2.5em; /* slightly smaller for Android */
       margin: 10px;
       animation: kiss 2s infinite alternate;
     }
@@ -138,12 +144,15 @@
       to { transform: translateX(10px) scale(1.2); }
     }
 
-    /* iPhone view adjustments */
-    @media (max-width: 600px) {
-      .message { font-size: 1em; }
-      .valentine h1 { font-size: 1.6em; }
-      .result { font-size: 1.3em; }
-      button { font-size: 1em; padding: 10px 20px; }
+    /* Mobile adjustments for Android/iOS */
+    @media (max-width: 768px) {
+      .message { font-size: 1em; line-height: 1.4em; padding: 0 15px; }
+      .valentine h1 { font-size: 1.4em; }
+      .valentine p { font-size: 0.9em; }
+      .result { font-size: 1.2em; }
+      .buttons { flex-direction: column; align-items: center; }
+      button { width: 80%; font-size: 1em; padding: 10px 18px; }
+      .teddy { font-size: 2.2em; }
     }
   </style>
 </head>
@@ -153,8 +162,8 @@
 
   <div class="message">
     My dearest Bharat,<br><br>
-    In just these two short months, you’ve become my favorite boy! You're the smartest shorty I've ever come across. Nigga you did steal my heart bro? I mean, its magical as fuckkkk. Can you believe how close we've become in 2 tiny months?<br><br>
-    But honestly, man, I need you to know how special you are. Okay lets put it this way - I'd eat lauki for you everyday for the rest of my life.<br><br>
+    In just these two short months, you’ve quietly become my safest place, my favorite thought, and the calm I never knew I was searching for. Every smile of yours feels like home, every conversation like a memory I want to relive forever, and every moment with you reminds me how extraordinary love can feel when it’s real.<br><br>
+    You walked into my life and somehow turned ordinary days into something magical, something softer, something warmer. I don’t want a future where you’re just a part of my story — I want you to be the story itself.<br><br>
     So today, and on every Valentine that follows, I choose you with my whole heart, with all the love I have, and with every tomorrow I dream of.
   </div>
 
