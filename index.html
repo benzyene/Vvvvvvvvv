@@ -220,10 +220,13 @@
 
     // Moving NO button
     const noBtn = document.getElementById('no');
-    noBtn.addEventListener('mouseover', () => {
-      noBtn.style.top = Math.random() * 80 + 'vh';
-      noBtn.style.left = Math.random() * 80 + 'vw';
-      noBtn.style.position = 'absolute';
+    function moveNoBtn() {
+  noBtn.style.top = Math.random() * 80 + 'vh';
+  noBtn.style.left = Math.random() * 80 + 'vw';
+  noBtn.style.position = 'absolute';
+}
+noBtn.addEventListener('mouseover', moveNoBtn);
+noBtn.addEventListener('click', moveNoBtn);
     });
 
     // YES button click
